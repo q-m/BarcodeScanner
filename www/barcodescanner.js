@@ -13,9 +13,9 @@
         /**
          * Constructor.
          *
-         * @returns {BarcodeScanner}
+         * @returns {PortraitBarcodeScanner}
          */
-        function BarcodeScanner() {
+        function PortraitBarcodeScanner() {
 
             /**
              * Encoding constants.
@@ -42,55 +42,55 @@
          *    }
          * @param {Function} errorCallback
          */
-        BarcodeScanner.prototype.scan = function (successCallback, errorCallback) {
+        PortraitBarcodeScanner.prototype.scan = function (successCallback, errorCallback) {
             if (errorCallback == null) {
                 errorCallback = function () {
                 };
             }
 
             if (typeof errorCallback != "function") {
-                console.log("BarcodeScanner.scan failure: failure parameter not a function");
+                console.log("PortraitBarcodeScanner.scan failure: failure parameter not a function");
                 return;
             }
 
             if (typeof successCallback != "function") {
-                console.log("BarcodeScanner.scan failure: success callback parameter must be a function");
+                console.log("PortraitBarcodeScanner.scan failure: success callback parameter must be a function");
                 return;
             }
 
-            exec(successCallback, errorCallback, 'BarcodeScanner', 'scan', []);
+            exec(successCallback, errorCallback, 'PortraitBarcodeScanner', 'scan', []);
         };
 
         //-------------------------------------------------------------------
-        BarcodeScanner.prototype.encode = function (type, data, successCallback, errorCallback, options) {
+        PortraitBarcodeScanner.prototype.encode = function (type, data, successCallback, errorCallback, options) {
             if (errorCallback == null) {
                 errorCallback = function () {
                 };
             }
 
             if (typeof errorCallback != "function") {
-                console.log("BarcodeScanner.encode failure: failure parameter not a function");
+                console.log("PortraitBarcodeScanner.encode failure: failure parameter not a function");
                 return;
             }
 
             if (typeof successCallback != "function") {
-                console.log("BarcodeScanner.encode failure: success callback parameter must be a function");
+                console.log("PortraitBarcodeScanner.encode failure: success callback parameter must be a function");
                 return;
             }
 
-            exec(successCallback, errorCallback, 'BarcodeScanner', 'encode', [
+            exec(successCallback, errorCallback, 'PortraitBarcodeScanner', 'encode', [
                 {"type": type, "data": data, "options": options}
             ]);
         };
 
-        var barcodeScanner = new BarcodeScanner();
+        var barcodeScanner = new PortraitBarcodeScanner();
         module.exports = barcodeScanner;
 
     }
 
     ScannerLoader(require, exports, module);
 
-    cordova.define("cordova/plugin/BarcodeScanner", ScannerLoader);
+    cordova.define("cordova/plugin/PortraitBarcodeScanner", ScannerLoader);
 
 
 

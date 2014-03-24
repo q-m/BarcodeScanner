@@ -73,19 +73,19 @@ Workflow for creating and building example project with the plugin:
 	
 	Note. If you wish to remove Android platform (to e.g. generate it with your www assests) you will need to remove "platforms\android" and "merges\android\".
 
-2. Copy plugin files to "hello\plugins\com.phonegap.plugins.portraitbarcodescanner\". You can simply download from github:
+2. Copy plugin files to "hello\plugins\com.brightin.plugins.portraitbarcodescanner\". You can simply download from github:
 	```
-	git clone https://github.com/wildabeast/BarcodeScanner.git plugins\com.phonegap.plugins.portraitbarcodescanner
+	git clone https://github.com/wildabeast/BarcodeScanner.git plugins\com.brightin.plugins.portraitbarcodescanner
 	```
 
 3. Install the plugin (current dir. being "hello"):
 	```
-	plugman --plugins_dir plugins --plugin com.phonegap.plugins.portraitbarcodescanner --platform android --project platforms\android
-	plugman install --plugins_dir plugins --plugin com.phonegap.plugins.portraitbarcodescanner --platform android --project platforms\android
+	plugman --plugins_dir plugins --plugin com.brightin.plugins.portraitbarcodescanner --platform android --project platforms\android
+	plugman install --plugins_dir plugins --plugin com.brightin.plugins.portraitbarcodescanner --platform android --project platforms\android
 	```
 	
 	Note. To manually remove plugin you need to re-create plugins\android.json (and remove changes done by the plugin - you can simply remove whole platform as described in first step and re-create).
 
 4. Build & deploy Android project with whatever Android IDE (or ANT + ADK tools).
 
-Note. Plugin sub-dir (here "com.phonegap.plugins.portraitbarcodescanner") need to be the same as the plugin ID only since PhoneGap 3.0.
+Note. Plugin sub-dir (here "com.brightin.plugins.portraitbarcodescanner") need to be the same as the plugin ID only since PhoneGap 3.0.

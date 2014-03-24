@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="com.phonegap.plugins.portraitbarcodescanner"
+    id="com.brightin.plugins.portraitbarcodescanner"
     version="1.1.1">
 
     <name>PortraitBarcodeScanner</name>
@@ -11,8 +11,8 @@
         <engine name="cordova" version=">=3.0.0" />
     </engines>    
 
-    <js-module src="www/barcodescanner.js" name="BarcodeScanner">
-        <clobbers target="cordova.plugins.portraitbarcodeScanner" />
+    <js-module src="www/barcodescanner.js" name="PortraitBarcodeScanner">
+        <clobbers target="cordova.plugins.barcodeScanner" />
     </js-module>
 
     <asset src="www/barcodescanner.js" target="barcodescanner.js" />
@@ -21,7 +21,7 @@
     <platform name="ios">
         <!-- Cordova >= 2.8 -->
         <config-file target="config.xml" parent="/*">
-            <feature name="BarcodeScanner">
+            <feature name="PortraitBarcodeScanner">
                 <param name="ios-package" value="CDVBarcodeScanner" />
             </feature>
         </config-file>
@@ -43,20 +43,20 @@
     <!-- android -->
     <platform name="android">
 
-        <source-file src="src/android/com/phonegap/plugins/portraitbarcodescanner/BarcodeScanner.java" target-dir="src/com/phonegap/plugins/portraitbarcodescanner" />
+        <source-file src="src/android/com/brightin/plugins/portraitbarcodescanner/PortraitBarcodeScanner.java" target-dir="src/com/brightin/plugins/portraitbarcodescanner" />
         <!--
         <source-file src="R.java" target-dir="src/com/google/zxing/client/android" />
         -->
         
         <!--
         <config-file target="res/xml/plugins.xml" parent="/plugins">
-            <plugin name="BarcodeScanner" value="com.phonegap.plugins.portraitbarcodescanner.BarcodeScanner"/>
+            <plugin name="BarcodeScanner" value="com.brightin.plugins.portraitbarcodescanner.BarcodeScanner"/>
         </config-file>
         -->
 
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="BarcodeScanner">
-                <param name="android-package" value="com.phonegap.plugins.portraitbarcodescanner.BarcodeScanner" />
+            <feature name="PortraitBarcodeScanner">
+                <param name="android-package" value="com.brightin.plugins.portraitbarcodescanner.PortraitBarcodeScanner" />
             </feature>
         </config-file>
 
@@ -70,13 +70,13 @@
                 android:windowSoftInputMode="stateAlwaysHidden"
                 android:exported="false">
                 <intent-filter>
-                    <action android:name="com.phonegap.plugins.portraitbarcodescanner.SCAN"/>
+                    <action android:name="com.brightin.plugins.portraitbarcodescanner.SCAN"/>
                     <category android:name="android.intent.category.DEFAULT"/>
                 </intent-filter>
             </activity>
             <activity android:name="com.google.zxing.client.android.encode.EncodeActivity" android:label="@string/share_name">
                 <intent-filter>
-                    <action android:name="com.phonegap.plugins.portraitbarcodescanner.ENCODE"/>
+                    <action android:name="com.brightin.plugins.portraitbarcodescanner.ENCODE"/>
                     <category android:name="android.intent.category.DEFAULT"/>
                 </intent-filter>
             </activity>

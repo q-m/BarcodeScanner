@@ -6,7 +6,7 @@
  * Copyright (c) 2011, IBM Corporation
  * Copyright (c) 2013, Maciej Nux Jaros
  */
-package com.phonegap.plugins.portraitbarcodescanner;
+package com.brightin.plugins.portraitbarcodescanner;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,7 +25,7 @@ import org.apache.cordova.PluginResult;
  *
  * @sa https://github.com/apache/cordova-android/blob/master/framework/src/org/apache/cordova/CordovaPlugin.java
  */
-public class BarcodeScanner extends CordovaPlugin {
+public class PortraitBarcodeScanner extends CordovaPlugin {
     public static final int REQUEST_CODE = 0x0ba7c0de;
 
     private static final String SCAN = "scan";
@@ -35,23 +35,23 @@ public class BarcodeScanner extends CordovaPlugin {
     private static final String TEXT = "text";
     private static final String DATA = "data";
     private static final String TYPE = "type";
-    private static final String SCAN_INTENT = "com.phonegap.plugins.portraitbarcodescanner.SCAN";
+    private static final String SCAN_INTENT = "com.brightin.plugins.portraitbarcodescanner.SCAN";
     private static final String ENCODE_DATA = "ENCODE_DATA";
     private static final String ENCODE_TYPE = "ENCODE_TYPE";
-    private static final String ENCODE_INTENT = "com.phonegap.plugins.portraitbarcodescanner.ENCODE";
+    private static final String ENCODE_INTENT = "com.brightin.plugins.portraitbarcodescanner.ENCODE";
     private static final String TEXT_TYPE = "TEXT_TYPE";
     private static final String EMAIL_TYPE = "EMAIL_TYPE";
     private static final String PHONE_TYPE = "PHONE_TYPE";
     private static final String SMS_TYPE = "SMS_TYPE";
 
-    private static final String LOG_TAG = "BarcodeScanner";
+    private static final String LOG_TAG = "PortraitBarcodeScanner";
 
     private CallbackContext callbackContext;
 
     /**
      * Constructor.
      */
-    public BarcodeScanner() {
+    public PortraitBarcodeScanner() {
     }
 
     /**
